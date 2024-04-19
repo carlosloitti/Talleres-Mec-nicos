@@ -20,6 +20,10 @@
           <tr>
             <th scope="col">Code</th>
             <th scope="col">Marca</th> 
+            <th scope="col">Modelo</th> 
+            <th scope="col">Año</th> 
+            <th scope="col">Matricula</th> 
+            <th scope="col">Tipo</th> 
             <th scope="col">Propietario</th>
             <th scope="col">Actions</th>
           </tr>
@@ -29,7 +33,10 @@
           <tr>
                 <th scope="row">{{ $vehiculo->id}}</th>
                 <td>{{ $vehiculo->marca}}</td>
-                
+                <td>{{ $vehiculo->modelo}}</td>
+                <td>{{ $vehiculo->anio}}</td>
+                <td>{{ $vehiculo->matricula}}</td>
+                <td>{{ $vehiculo->tipo}}</td>
                 <td>{{ $vehiculo->nombre}}</td>
                 <td>
                     <a href=" {{ route('vehiculos.edit' , ['vehiculo'=>$vehiculo->id]) }} " 

@@ -22,10 +22,36 @@
               <div id="idHelp" class="form-text">Vehiculo Code</div>
             </div>
             <div class="mb-3">
-              <label for="name" class="form-label">Vehiculo</label>
-              <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="name"
-             placeholder="Vehiculo name." >             
+              <label for="name" class="form-label">Vehiculo Marca</label>
+              <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="marca"
+             placeholder="Vehiculo marca" >             
             </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo Modelo</label>
+                <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="modelo"
+               placeholder="Vehiculo modelo" >             
+              </div>
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo Año</label>
+                <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="anio"
+               placeholder="Vehiculo año" >             
+              </div>
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo Matricula</label>
+                <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="matricula"
+               placeholder="Vehiculo matricula" >             
+              </div>
+
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo Tipo</label>
+                <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="tipo"
+               placeholder="Vehiculo tipo" >             
+              </div>
+
 
             <label for="propietario">Propietario</label>
             <select class="form-select" id="propietario" name="code" required>

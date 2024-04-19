@@ -23,10 +23,36 @@
               <div id="codigoHelp" class="form-text">Vehiculo Id.</div>
             </div>
             <div class="mb-3">
-              <label for="name" class="form-label">Vehiculo</label>
-              <input type="text" required class="form-control" id="name" placeholder="Vehiculo name" 
-                    name="name" value="{{ $vehiculo->marca }}">             
+              <label for="name" class="form-label">Vehiculo marca</label>
+              <input type="text" required class="form-control" id="name" placeholder="Vehiculo marca" 
+                    name="marca" value="{{ $vehiculo->marca }}">             
             </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo modelo</label>
+                <input type="text" required class="form-control" id="name" placeholder="Vehiculo modelo" 
+                      name="modelo" value="{{ $vehiculo->modelo }}">             
+              </div>
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo año</label>
+                <input type="text" required class="form-control" id="name" placeholder="Vehiculo año" 
+                      name="anio" value="{{ $vehiculo->anio }}">             
+              </div>
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo Matricula</label>
+                <input type="text" required class="form-control" id="name" placeholder="Vehiculo matricula" 
+                      name="matricula" value="{{ $vehiculo->matricula }}">             
+              </div>
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Vehiculo Tipo</label>
+                <input type="text" required class="form-control" id="name" placeholder="Vehiculo tipo" 
+                      name="tipo" value="{{ $vehiculo->tipo }}">             
+              </div>
+
+
 
             <label for="propietario">Propietario</label>
             <select class="form-select" id="propietario" name="code" required>

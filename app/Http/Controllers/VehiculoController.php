@@ -37,8 +37,11 @@ class VehiculoController extends Controller
     public function store(Request $request)
     {
         $vehiculo = new Vehiculo();
-        $vehiculo->marca = $request->name;
-        
+        $vehiculo->marca = $request->marca;
+        $vehiculo->modelo= $request->modelo;
+        $vehiculo->anio  = $request->anio;
+        $vehiculo->matricula  = $request->matricula;
+        $vehiculo->tipo  = $request->tipo;
         $vehiculo->propietario_id = $request->code;
         $vehiculo->save();
 
@@ -75,8 +78,11 @@ class VehiculoController extends Controller
     public function update(Request $request, string $id)
     {
         $vehiculo = Vehiculo::find($id);
-
-        $vehiculo->marca = $request->name;
+        $vehiculo->marca = $request->marca;
+        $vehiculo->modelo= $request->modelo;
+        $vehiculo->anio  = $request->anio;
+        $vehiculo->matricula  = $request->matricula;
+        $vehiculo->tipo  = $request->tipo;
         $vehiculo->propietario_id = $request->code;
         $vehiculo->save();
 
