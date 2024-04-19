@@ -25,12 +25,21 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($vehiculos as $vehiculos)
+            @foreach ($vehiculos as $vehiculo)
           <tr>
-                <th scope="row">{{ $vehiculos->id}}</th>
-                <td>{{ $vehiculos->marca}}</td>
-                <td>{{ $vehiculos->nombre}}</td>
-                <td><span>Actions</span></td>
+                <th scope="row">{{ $vehiculo->id}}</th>
+                <td>{{ $vehiculo->marca}}</td>
+                <td>{{ $vehiculo->nombre}}</td>
+                <td>
+                    
+  
+                    <form action="{{ route('vehiculos.destroy', ['vehiculo' =>$vehiculo->id]) }}"
+                      method="POST" style="display: inline-back">
+                      @method('delete')
+                      @csrf
+                     <input class="btn btn-danger" type="submit" value="delete">
+                  </form>
+                  </td>
                    
           </tr>
           @endforeach
