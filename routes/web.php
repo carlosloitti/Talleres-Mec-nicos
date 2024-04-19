@@ -10,3 +10,5 @@ Route::get('/', function () {
 });
 
 Route::get('/vehiculos' , [VehiculoController::class, 'index'])->name('vehiculos.index');
+Route::post('/vehiculos' , [VehiculoController::class, 'store'])->name('vehiculos.store');
+Route::get('/vehiculos/create' , [VehiculoController::class, 'create'])->name('vehiculos.create');

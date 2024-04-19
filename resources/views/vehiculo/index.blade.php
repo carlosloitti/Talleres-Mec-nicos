@@ -14,7 +14,7 @@
 
   <body>
     <h1>Listado de vehiculos</h1>
-     
+    <form method="POST" action="{{ route("vehiculos.store") }}">
     <table class="table">
         <thead>
           <tr>
