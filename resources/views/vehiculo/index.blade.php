@@ -14,12 +14,12 @@
 
   <body>
     <h1>Listado de vehiculos</h1>
-    <form method="POST" action="{{ route("vehiculos.store") }}">
+    <a href="{{ route('vehiculos.create') }}" class="btn btn-success">Add</a>
     <table class="table">
         <thead>
           <tr>
             <th scope="col">Code</th>
-            <th scope="col">Marca</th>
+            <th scope="col">Marca</th> 
             <th scope="col">Propietario</th>
             <th scope="col">Actions</th>
           </tr>
@@ -29,9 +29,11 @@
           <tr>
                 <th scope="row">{{ $vehiculo->id}}</th>
                 <td>{{ $vehiculo->marca}}</td>
+                
                 <td>{{ $vehiculo->nombre}}</td>
                 <td>
-                    
+                    <a href=" {{ route('vehiculos.edit' , ['vehiculo'=>$vehiculo->id]) }} " 
+                        class=" btn btn-info"> Edit </a></li>
   
                     <form action="{{ route('vehiculos.destroy', ['vehiculo' =>$vehiculo->id]) }}"
                       method="POST" style="display: inline-back">
