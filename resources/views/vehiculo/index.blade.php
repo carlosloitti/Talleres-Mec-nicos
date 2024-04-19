@@ -20,7 +20,7 @@
           <tr>
             <th scope="col">Code</th>
             <th scope="col">Marca</th>
-            <th scope="col">Modelo</th>
+            <th scope="col">Propietario</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -29,7 +29,7 @@
           <tr>
                 <th scope="row">{{ $vehiculos->id}}</th>
                 <td>{{ $vehiculos->marca}}</td>
-                <td>{{ $vehiculos->modelo}}</td>
+                <td>{{ $vehiculos->nombre}}</td>
                 <td><span>Actions</span></td>
                    
           </tr>

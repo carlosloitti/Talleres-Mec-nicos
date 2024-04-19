@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VehiculoController extends Controller
 {
@@ -12,7 +13,10 @@ class VehiculoController extends Controller
      */
     public function index()
     {
-        $vehiculos = Vehiculo::all();
+        $vehiculos = DB::table('vehiculos')
+            ->join('propietarios', 'vehiculos.propietario_id', '=' , 'propietarios.id')
+            ->select('vehiculos.*', "propietarios.nombre")
+            ->get();
         return view('vehiculo.index', ['vehiculos' => $vehiculos]);
     }
 
