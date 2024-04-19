@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\VehiculoController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,6 @@ Route::get('/vehiculos/create' , [VehiculoController::class, 'create'])->name('v
 Route::delete('/vehiculos/{vehiculo}' , [VehiculoController::class, 'destroy'])->name('vehiculos.destroy');
 Route::put('/vehiculos/{vehiculo}' , [VehiculoController::class, 'update'])->name('vehiculos.update');
 Route::get('/vehiculos/{vehiculo}/edit' , [VehiculoController::class, 'edit'])->name('vehiculos.edit');
+
+
+Route::get('/propietarios' , [PropietarioController::class, 'index'])->name('propietarios.index');
