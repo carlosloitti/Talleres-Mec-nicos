@@ -43,7 +43,7 @@
                         class=" btn btn-info"> Edit </a></li>
   
                     <form action="{{ route('vehiculos.destroy', ['vehiculo' =>$vehiculo->id]) }}"
-                      method="POST" style="display: inline-back">
+                      method="POST" style="display: inline-block">
                       @method('delete')
                       @csrf
                      <input class="btn btn-danger" type="submit" value="delete">

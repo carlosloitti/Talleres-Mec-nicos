@@ -63,7 +63,11 @@ class ServicioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $servicio = Servicio::find($id);
+        $vehiculos = DB::table('vehiculos')
+        ->orderBy('marca')
+        ->get();
+        return view('servicio.edit' , ['servicio'  => $servicio, 'vehiculos' => $vehiculos]);
     }
 
     /**
@@ -71,7 +75,18 @@ class ServicioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $servicio =  Servicio::find($id);
+        $servicio->fecha_servicio = $request->fecha_servicio;
+        $servicio->descripcion = $request->descripcion;
+        $servicio->costo  = $request->costo; 
+        $servicio->vehiculo_id = $request->code;
+        $servicio->save();
+
+        $servicios = DB::table('servicios')
+        ->join('vehiculos', 'servicios.vehiculo_id', '=' , 'vehiculos.id')
+        ->select('servicios.*', "vehiculos.marca")
+        ->get();
+    return view('servicio.index', ['servicios' => $servicios]);
     }
 
     /**

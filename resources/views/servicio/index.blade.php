@@ -33,6 +33,8 @@
                 <td>{{ $servicio->descripcion}}</td>
                 <td>{{ $servicio->costo}}</td> 
                 <td>
+                    <a href=" {{ route('servicios.edit' , ['servicio'=>$servicio->id]) }} " 
+                        class=" btn btn-info"> Edit </a></li>
                      
                     <form action="{{ route('servicios.destroy', ['servicio' =>$servicio->id]) }}"
                         method="POST" style="display: inline-block">
