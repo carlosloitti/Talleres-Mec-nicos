@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
+use App\Models\Propietario;
 use App\Models\Propietarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,7 @@ class PropietarioController extends Controller
      */
     public function index()
     {
-        $propietarios = Propietarios::all();
+        $propietarios = Propietario::all();
        // $propietarios = DB::table('propietarios')
          //   ->join('vehiculos', 'propietarios.nombre', '=' , 'vehiculos.propietario_id')
            // ->select('propietarios.*', "vehiculos.modelo")
@@ -39,7 +40,7 @@ class PropietarioController extends Controller
      */
     public function store(Request $request)
     {
-        $propietario = new Propietarios();
+        $propietario = new Propietario();
         $propietario->nombre = $request->nombre;
         $propietario->apellido= $request->apellido;
         $propietario->telefono  = $request->telefono;
@@ -48,7 +49,7 @@ class PropietarioController extends Controller
         $propietario->id = $request->code;
         $propietario->save();
 
-        $propietarios = Propietarios::all();
+        $propietarios = Propietario::all();
         return view('propietario.index', ['propietarios' => $propietarios]);
     }
     
@@ -66,7 +67,7 @@ class PropietarioController extends Controller
      */
     public function edit(string $id)
     {
-        $propietario = Propietarios::find($id);
+        $propietario = Propietario::find($id);
         $vehiculos = DB::table('vehiculos')
         ->orderBy('marca')
         ->get();
@@ -78,7 +79,7 @@ class PropietarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $propietario = new Propietarios();
+        $propietario = new Propietario();
         $propietario->nombre = $request->nombre;
         $propietario->apellido= $request->apellido;
         $propietario->telefono  = $request->telefono;
@@ -87,7 +88,7 @@ class PropietarioController extends Controller
         $propietario->id = $request->code;
         $propietario->save();
 
-        $propietarios = Propietarios::all();
+        $propietarios = Propietario::all();
         return view('propietario.index', ['propietarios' => $propietarios]);
     }
     
@@ -97,7 +98,7 @@ class PropietarioController extends Controller
      */
     public function destroy(string $id)
     {
-        $propietario = Propietarios::find($id);
+        $propietario = Propietario::find($id);
         $propietario->delete();
         $propietarios= DB::table('propietarios');
 

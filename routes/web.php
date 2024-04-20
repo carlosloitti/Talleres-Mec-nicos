@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PropietarioController;
+use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\VehiculoController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,7 @@ Route::get('/propietarios/create' , [PropietarioController::class, 'create'])->n
 Route::delete('/propietarios/{propietario}' , [PropietarioController::class, 'destroy'])->name('propietarios.destroy');
 Route::put('/propietarios/{propietario}' , [PropietarioController::class, 'update'])->name('propietarios.update');
 Route::get('/propietarios/{propietario}/edit' , [PropietarioController::class, 'edit'])->name('propietarios.edit');
+
+Route::get('/servicios' , [ServicioController::class, 'index'])->name('servicios.index');
+
+
