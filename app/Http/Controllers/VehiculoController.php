@@ -13,6 +13,7 @@ class VehiculoController extends Controller
      */
     public function index()
     {
+        
         $vehiculos = DB::table('vehiculos')
             ->join('propietarios', 'vehiculos.propietario_id', '=' , 'propietarios.id')
             ->select('vehiculos.*', "propietarios.nombre")

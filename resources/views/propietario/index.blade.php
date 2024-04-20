@@ -14,7 +14,7 @@
 
   <body>
     <h1>Listado de Propietarios</h1>
-     
+    <a href="{{ route('propietarios.create') }}" class="btn btn-success">Add</a>
     <table class="table">
         <thead>
           <tr>
