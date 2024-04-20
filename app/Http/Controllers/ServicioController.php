@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Servicio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ServicioController extends Controller
 {
@@ -12,8 +13,11 @@ class ServicioController extends Controller
      */
     public function index()
     {
-        $servicios = Servicio::all();
-        return view('servicio.index', ['servicios' => $servicios]);
+        $servicios = DB::table('servicios')
+        ->join('vehiculos', 'servicios.vehiculo_id', '=' , 'vehiculos.id')
+        ->select('servicios.*', "vehiculos.marca")
+        ->get();
+    return view('servicio.index', ['servicios' => $servicios]);
     }
 
     /**
@@ -21,7 +25,10 @@ class ServicioController extends Controller
      */
     public function create()
     {
-        //
+        $vehiculos = DB::table('vehiculos')
+        ->orderBy('marca')
+        ->get();
+        return view('servicio.new' , ['vehiculos' => $vehiculos]);
     }
 
     /**
@@ -29,7 +36,18 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $servicio = new Servicio();
+        $servicio->fecha_servicio = $request->fecha_servicio;
+        $servicio->descripcion = $request->descripcion;
+        $servicio->costo  = $request->costo; 
+        $servicio->vehiculo_id = $request->code;
+        $servicio->save();
+
+        $servicios = DB::table('servicios')
+        ->join('vehiculos', 'servicios.vehiculo_id', '=' , 'vehiculos.id')
+        ->select('servicios.*', "vehiculos.marca")
+        ->get();
+    return view('servicio.index', ['servicios' => $servicios]);
     }
 
     /**

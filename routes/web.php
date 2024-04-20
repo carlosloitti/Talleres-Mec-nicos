@@ -26,6 +26,9 @@ Route::delete('/propietarios/{propietario}' , [PropietarioController::class, 'de
 Route::put('/propietarios/{propietario}' , [PropietarioController::class, 'update'])->name('propietarios.update');
 Route::get('/propietarios/{propietario}/edit' , [PropietarioController::class, 'edit'])->name('propietarios.edit');
 
+
 Route::get('/servicios' , [ServicioController::class, 'index'])->name('servicios.index');
+Route::post('/servicios' , [ServicioController::class, 'store'])->name('servicios.store');
+Route::get('/servicios/create' , [ServicioController::class, 'create'])->name('servicios.create');
 
 

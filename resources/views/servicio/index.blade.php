@@ -14,7 +14,7 @@
 
   <body>
     <h1>Listado de Servicios</h1>
-     
+    <a href="{{ route('servicios.create') }}" class="btn btn-success">Add</a>
     <table class="table">
         <thead>
           <tr>
