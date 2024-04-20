@@ -33,7 +33,13 @@
                 <td>{{ $servicio->descripcion}}</td>
                 <td>{{ $servicio->costo}}</td> 
                 <td>
-                     <span>code</span>
+                     
+                    <form action="{{ route('servicios.destroy', ['servicio' =>$servicio->id]) }}"
+                        method="POST" style="display: inline-block">
+                        @method('delete')
+                        @csrf
+                       <input class="btn btn-danger" type="submit" value="delete">
+                    </form>
                  
                   </td>
                    

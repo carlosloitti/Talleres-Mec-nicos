@@ -30,5 +30,6 @@ Route::get('/propietarios/{propietario}/edit' , [PropietarioController::class, '
 Route::get('/servicios' , [ServicioController::class, 'index'])->name('servicios.index');
 Route::post('/servicios' , [ServicioController::class, 'store'])->name('servicios.store');
 Route::get('/servicios/create' , [ServicioController::class, 'create'])->name('servicios.create');
+Route::delete('/servicios/{servicio}' , [VehiculoController::class, 'destroy'])->name('servicios.destroy');
 
 
