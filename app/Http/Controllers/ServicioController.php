@@ -77,8 +77,17 @@ class ServicioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $servicio = Servicio::find($id);
+        $servicio->delete();        
+
+        $servicios = DB::table('servicios')
+        ->join('vehiculos', 'servicios.vehiculo_id', '=' , 'vehiculos.id')
+        ->select('servicios.*', "vehiculos.marca")
+        ->get();
+    return view('servicio.index', ['servicios' => $servicios]);
+
+
     }
 }
