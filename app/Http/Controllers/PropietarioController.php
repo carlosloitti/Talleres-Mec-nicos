@@ -66,7 +66,11 @@ class PropietarioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $propietario = Propietarios::find($id);
+        $vehiculos = DB::table('vehiculos')
+        ->orderBy('marca')
+        ->get();
+        return view('propietario.edit' , ['propietario'  => $propietario, 'vehiculos' => $vehiculos]);
     }
 
     /**
@@ -74,8 +78,19 @@ class PropietarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $propietario = new Propietarios();
+        $propietario->nombre = $request->nombre;
+        $propietario->apellido= $request->apellido;
+        $propietario->telefono  = $request->telefono;
+        $propietario->correo_electronico  = $request->correo_electronico;
+        $propietario->direccion  = $request->direccion;
+        $propietario->id = $request->code;
+        $propietario->save();
+
+        $propietarios = Propietarios::all();
+        return view('propietario.index', ['propietarios' => $propietarios]);
     }
+    
 
     /**
      * Remove the specified resource from storage.
