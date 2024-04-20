@@ -15,10 +15,10 @@ class PropietarioController extends Controller
     public function index()
     {
         $propietarios = Propietarios::all();
-        //$propietarios = DB::table('propietarios')
-            //->join('vehiculos', 'propietarios.nombre', '=' , 'vehiculos.id')
+       // $propietarios = DB::table('propietarios')
+         //   ->join('vehiculos', 'propietarios.nombre', '=' , 'vehiculos.propietario_id')
            // ->select('propietarios.*', "vehiculos.modelo")
-           // ->get();
+            //->get();
         return view('propietario.index', ['propietarios' => $propietarios]);
     }
 
@@ -82,6 +82,12 @@ class PropietarioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $propietario = Propietarios::find($id);
+        $propietario->delete();
+        $propietarios= DB::table('propietarios');
+
+        
+        return view('propietario.index', ['propietarios' => $propietarios]);
+
     }
 }

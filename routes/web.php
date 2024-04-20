@@ -21,3 +21,4 @@ Route::get('/vehiculos/{vehiculo}/edit' , [VehiculoController::class, 'edit'])->
 Route::get('/propietarios' , [PropietarioController::class, 'index'])->name('propietarios.index');
 Route::post('/propietarios' , [PropietarioController::class, 'store'])->name('propietarios.store');
 Route::get('/propietarios/create' , [PropietarioController::class, 'create'])->name('propietarios.create');
+Route::delete('/propietarios/{propietario}' , [PropietarioController::class, 'destroy'])->name('propietarios.destroy');

@@ -36,7 +36,14 @@
                 <td>{{ $propietario->telefono}}</td>
                 <td>{{ $propietario->correo_electronico}}</td>
                 <td>{{ $propietario->direccion}}</td> 
-                <td> <span>acrtiosns</span>
+                <td> 
+                  
+                  <form action="{{ route('propietarios.destroy', ['propietario' =>$propietario->id]) }}"
+                    method="POST" style="display: inline-back">
+                    @method('delete')
+                    @csrf
+                   <input class="btn btn-danger" type="submit" value="delete">
+                </form>
                     
                   </td>
                    
