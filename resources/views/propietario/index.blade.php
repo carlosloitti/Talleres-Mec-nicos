@@ -9,10 +9,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Listado de Propietarios</title>
+
+    
+  
+
+
   </head>
 
 
+
+  <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Propietarios') }}
+        </h2>
+    </x-slot>
+
   <body>
+
+
+    
     <h1>Listado de Propietarios</h1>
     <a href="{{ route('propietarios.create') }}" class="btn btn-success">Add</a>
     <table class="table">
@@ -42,7 +58,7 @@
                     class=" btn btn-info"> Edit </a></li>
                   
                   <form action="{{ route('propietarios.destroy', ['propietario' =>$propietario->id]) }}"
-                    method="POST" style="display: inline-back">
+                    method="POST" style="display: inline-block">
                     @method('delete')
                     @csrf
                    <input class="btn btn-danger" type="submit" value="delete">
@@ -56,6 +72,7 @@
       </table>
     </div>
 
+  </x-app-layout>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
