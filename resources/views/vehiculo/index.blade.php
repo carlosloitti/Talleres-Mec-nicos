@@ -10,7 +10,12 @@
 
     <title>Listado de vehiculos</title>
   </head>
-
+  <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Vehiculos') }}
+        </h2>
+    </x-slot>
 
   <body>
     <h1>Listado de vehiculos</h1>
@@ -55,6 +60,9 @@
         </tbody>
       </table>
     </div>
+
+    
+  </x-app-layout>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

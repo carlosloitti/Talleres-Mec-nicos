@@ -10,7 +10,12 @@
 
     <title>Listado de Servicios</title>
   </head>
-
+  <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Servicios') }}
+        </h2>
+    </x-slot>
 
   <body>
     <h1>Listado de Servicios</h1>
@@ -51,6 +56,7 @@
       </table>
     </div>
 
+  </x-app-layout>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
