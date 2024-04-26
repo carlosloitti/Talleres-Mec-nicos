@@ -1,6 +1,6 @@
 ### Configuración y operar sistema
 
-- git clone https://github.com/carlosloitti/personas-app.git
+- git clone https://github.com/carlosloitti/Talleres-Mec-nicos.git
 - php artisan migrate (crear DB con el nombre correspondiente a esa DB)
 - git branch
 - git add . 
